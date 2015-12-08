@@ -1,0 +1,81 @@
+#playground {
+  min-height: 450px;
+  text-align: center;
+}
+
+.glyphicon {
+  font-size: 50px;
+  margin-top: 200px;
+}
+.btn-lg {
+  margin-top: 200px;
+  padding: 20px 30px;
+  font-size: 30px;
+}
+
+.card {
+  padding-top: 20px;
+  margin: 10px 0 20px 0;
+  background-color: rgba(214, 224, 226, 0.2);
+  border-top-width: 0;
+  border-bottom-width: 2px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.card.hovercard {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 20px;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgba(214, 224, 226, 0.2);
+}
+.card.hovercard .cardheader {
+  background: #6D2258 no-repeat center center;
+  background-size: cover;
+  height: 219px;
+}
+.card.hovercard .cardheader img {
+  width: 250px;
+  margin-top: -50px;
+}
+.card.hovercard .avatar {
+  position: relative;
+  top: -75px;
+  margin-bottom: -75px;
+}
+.card.hovercard .avatar img {
+  width: 150px;
+  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.5);
+  background: white;
+}
+.card.hovercard .info {
+  padding: 10px 30px;
+}
+.card.hovercard .info .title {
+  margin-bottom: 15px;
+  font-size: 40px;
+  line-height: 1;
+  color: #262626;
+  vertical-align: middle;
+}
+.card.hovercard .info .desc {
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 20px;
+  color: #737373;
+  text-overflow: ellipsis;
+}
