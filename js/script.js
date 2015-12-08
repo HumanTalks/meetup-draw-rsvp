@@ -1,10 +1,15 @@
-MeetupApi.getRsvps('226509764', function(rsvps){
-  console.log('rsvps', rsvps);
-  $('body').on('click', '.draw-btn', function(){
-    drawRsvp(rsvps);
+var eventId = getUrlParam('eventId');
+if(eventId && eventId.length === 9){
+  MeetupApi.getRsvps(eventId, function(rsvps){
+    console.log('rsvps', rsvps);
+    $('body').on('click', '.draw-btn', function(){
+      drawRsvp(rsvps);
+    });
+    $('#playground').html('<button type="button" class="btn btn-default btn-lg draw-btn">Tirer au sort</button>');
   });
-  $('#playground').html('<button type="button" class="btn btn-default btn-lg draw-btn">Tirer au sort</button>');
-});
+} else {
+  window.alert('Invalid eventId <'+eventId+'>. You must specify meetup eventId in url parameter.');
+}
 
 function drawRsvp(rsvps){
   var chosen = rsvps[Math.floor(Math.random() * rsvps.length)];
@@ -22,4 +27,17 @@ function rsvpTmpl(rsvp){
       '</div>'+
     '</div>'
   );
+}
+
+function getUrlParam(name){
+  return getUrlParams()[name];
+}
+function getUrlParams(){
+  var results = {};
+  var params = window.location.search.substring(1).split('&');
+  for(var i in params){
+    var arr = params[i].split('=');
+    results[arr[0]] = arr[1];
+  }
+  return results;
 }
